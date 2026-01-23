@@ -1,0 +1,20 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.user-msg {
+  color: black;
+}
+.user-name {
+  font-family: sans-serif;
+  font-weight: bold;
+  font-style: italic;
+}
+
+img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  object-fit: cover;
+}
