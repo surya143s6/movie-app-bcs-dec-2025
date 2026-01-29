@@ -1,4 +1,4 @@
-/* .App {
+.App {
   font-family: sans-serif;
   text-align: center;
 }
@@ -14,10 +14,10 @@
 
 img {
   height: 100px;
-  width: 100px;
+  width: 100%;
   border-radius: 50px;
   object-fit: cover;
-} */
+}
  
 .banner-info{
   display: flex;
@@ -37,10 +37,13 @@ img{
   display:flex;
   justify-content: space-between;
   width:19rem;
+  
 }
 .summary{
   width: 19rem;
 }
+
+
 
 
 

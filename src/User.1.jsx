@@ -1,3 +1,7 @@
+import { Counter } from "./Counter";
+
+
+
 export function User({ name, pic }) {
   return (
     // UI Starts
@@ -6,6 +10,7 @@ export function User({ name, pic }) {
       <p className="user-greet">
         Hello <span className="user-name">{name}</span>
       </p>
+      <Counter/>
     </div>
     // UI Ends
   );

@@ -1,8 +1,9 @@
-import { useState } from "react";
 import "./index.css";
 import { Movieslist } from "./Movieslist";
+import { Counter } from "./Counter";
 
-// import { Userlist } from "./Userlist";
+import { Userlist } from "./Userlist";
+import { User } from "./User.1";
 
 export default function App() {
   // const userdetails = [
@@ -11,20 +12,9 @@ export default function App() {
     // UI Starts
     <div className="App">
       {/* <Userlist /> */}
-      {/* <Movieslist /> */}
-      <Counter />
-    </div>
-  );
-}
 
-function Counter() {
-  const [like, setLike] = useState(0);
-  const [dislike, setLike1] = useState(0);
-
-  return (
-    <div>
-      <button onClick={() => setLike(like + 1)}>👍{like}</button>
-      <button onClick={() => setLike1(dislike + 1)}>👎{dislike}</button>
+      <Movieslist />
+      {/* <User /> */}
     </div>
   );
 }
