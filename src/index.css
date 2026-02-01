@@ -38,11 +38,26 @@ img{
   justify-content: space-between;
   width:19rem;
   
+  
 }
 .summary{
   width: 19rem;
 }
 
+/* .moviesbutton > button {
+  color:purple;
+  font-weight: bold;
+  border-radius: 1rem;
+  
+} */
+
+.movie-details{
+  display:flex;
+  height:10rem;
+  flex-direction: column;
+  
+  
+}
 
 
 

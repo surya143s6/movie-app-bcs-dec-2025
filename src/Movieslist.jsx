@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { Movielist } from "./User";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
 
 export function Movieslist() {
-  const movies = [
+  const [movies, setMovie] = useState([
     {
       name: "Border 2",
       poster:
@@ -82,10 +85,57 @@ export function Movieslist() {
       summary:
         "An intense sports drama that dives into the high-stakes world of horse racing. The film explores the physical and emotional challenges faced by a professional jockey fighting for pride and survival in the sport.",
     },
-  ];
+  ]);
+
+  const [name, setName] = useState("");
+  const [poster, setPoster] = useState("");
+  const [rating, setRating] = useState("");
+  const [summary, setSummary] = useState("");
+  const addMovie = {
+    name: name,
+    poster: poster,
+
+    rating: rating,
+    summary: summary,
+  };
 
   return (
     <section className="banner-info">
+      <div className="movie-details">
+        <TextField
+          label="name"
+          variant="outlined"
+          onChange={(name) => setName(name.target.value)}
+          value={name}
+        />
+
+        <TextField
+          label="poster"
+          variant="outlined"
+          onChange={(poster) => setPoster(poster.target.value)}
+          value={poster}
+        />
+        <TextField
+          label="ratings"
+          variant="outlined"
+          onChange={(rating) => setRating(rating.target.value)}
+          value={rating}
+        />
+        <TextField
+          label="Outlined"
+          variant="outlined"
+          onChange={(summary) => setSummary(summary.target.value)}
+          value={summary}
+        />
+      </div>
+      <div className="moviesbutton">
+        <Button
+          variant="contained"
+          onClick={() => setMovie([...movies, addMovie])}
+        >
+          ADD Movie
+        </Button>
+      </div>
       {movies.map((movie) => (
         <Movielist
           poster={movie.poster}
