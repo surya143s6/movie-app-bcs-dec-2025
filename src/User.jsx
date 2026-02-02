@@ -1,8 +1,25 @@
 import { useState } from "react";
 import { Counter } from "./Counter";
 
-export function Movielist({ poster, name, rating, summary }) {
+export function Movielist({
+  poster,
+  name,
+  rating,
+  summary,
+  movies,
+  setMovie,
+  id,
+}) {
   const [show, setShow] = useState(false);
+
+  const delMovie = (id) => {
+    fetch(`https://6971d21b32c6bacb12c49d77.mockapi.io/movieslist/${id}`)
+      .then((response) => response.json())
+      .then(() => {
+        const remainingMovies = movies.filter((a) => a.id !== id);
+        setMovie(remainingMovies);
+      });
+  };
 
   return (
     <div className="movie-container">
@@ -19,6 +36,7 @@ export function Movielist({ poster, name, rating, summary }) {
       ) : (
         ""
       )}
+      <button onClick={() => delMovie(id)}>DELETE</button>
       <Counter />
     </div>
   );
